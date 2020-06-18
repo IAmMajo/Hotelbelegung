@@ -1,2 +1,7 @@
 # Visual Studio Code
 .vscode
+
+# Visual Studio Code mit Microsoft Visual C++ compiler
+hotelbelegung.*
+!hotelbelegung.cpp
+vc140.pdb
