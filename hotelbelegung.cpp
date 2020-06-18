@@ -2,7 +2,7 @@ using namespace std;
 
 #include <windows.h>
 
-bool rooms [6] [10]; 
+bool rooms [6] [10];
 
 int main() {
   /* Änderung der von der Konsole benutzten Zeichenkodierung zu UTF-8, damit
