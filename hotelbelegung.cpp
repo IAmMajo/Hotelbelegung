@@ -4,7 +4,7 @@ using namespace std;
 #include <iostream>
 #include <string>
 
-bool rooms[6][10] = {{1}};
+bool rooms[6][10];
 
 int getInput(const string message, const int maximum) {
   cout <<
