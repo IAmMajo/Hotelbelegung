@@ -26,10 +26,11 @@ int getInput(const string message, const int maximum) {
 
 void showRooms() {
   int i = 0;
+  int j = 0;
   /*Die Zimmer der einzelnen Etagen werden nach und nach abgelaufen.*/
   while (i<6) 
   {
-    int j = 0;
+    j = 0;
     cout<<i+1<<".Etage"<<endl;
     while (j<10) {
       if (rooms [i] [j] == 0)
