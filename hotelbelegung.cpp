@@ -24,9 +24,44 @@ int getInput(const string message, const int maximum) {
     : getInput(message, maximum);
 }
 
-void showRooms() {}
+void showRooms() {
+  int i = 0;
+  int j = 0;
+  while (i<6) 
+  {
+    cout<<i+1<<".Etage"<<endl;
+    while (j<10) {
+      if (rooms [i] [j] == 0)
+      {
+        cout<<j+1<<".Zimmer: frei"<<endl;
+      }
+      else
+      {
+        cout<<j+1<<".Zimmer: belegt"<<endl;
+      }
+    j++;
+    }
+  i++;
+  }
+}
 
-void showRoom() {}
+void showRoom() {  
+  const int room = getInput(
+    "Für welches Zimmer soll der Status überprüft werden?",
+    60
+  );
+  room = room - 1;
+  int floor = room / 10;
+  int roomnumber = room % 10;
+  if (rooms [floor] [roomnumber] == 0)
+  {
+    cout<<"Das Zimmer ist noch nicht belegt!"<<endl;
+  }
+  else
+  {
+    cout<<"Das Zimmer ist bereits belegt!"<<endl;
+  }
+}
 
 void checkIn() {}
 
