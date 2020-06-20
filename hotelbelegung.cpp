@@ -53,7 +53,7 @@ void showRoom() {
     "zwischen 1 und 60 gefordert ist!\n Beispiel: Etage 4, Zimmer 5 = 45",
     60
   );
-  /*Die Zimmernummer muss um 1 verkürzt werden, da das Array bei 0 0 beginnt und nicht bei 0 1. */
+  /*Die eingegebene Zahl wird so korrigiert, dass mit einberechnet ist, dass ein Array bei den Werten 0 0 beginnt und nicht bei 1 1*/
   int floor = room / 10 -1;
   room = room -1;
   int roomnumber = room % 10;
