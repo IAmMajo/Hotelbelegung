@@ -48,7 +48,8 @@ void showRooms() {
 
 void showRoom() {  
   int room = getInput(
-    "Für welches Zimmer soll der Status überprüft werden?",
+    "Für welches Zimmer soll der Status überprüft werden?/nBitte beachten Sie, dass hier eine Zahl "
+    "zwischen 1 und 60 gefordert ist!/nBeispiel: Etage 4, Zimmer 5 = 45",
     60
   );
   /*Die Zimmernummer muss um 1 verkürzt werden, da das Array bei 0 0 beginnt und nicht bei 0 1. */
