@@ -47,7 +47,7 @@ void showRooms() {
 }
 
 void showRoom() {  
-  const int room = getInput(
+  int room = getInput(
     "Für welches Zimmer soll der Status überprüft werden?",
     60
   );
