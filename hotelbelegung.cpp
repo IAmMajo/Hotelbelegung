@@ -24,6 +24,14 @@ int getInput(const string message, const int maximum) {
     : getInput(message, maximum);
 }
 
+bool* getRoom() {
+  /* Abfragen der Etagen- und Zimmernummer und Rückgabe eines Pointers zum
+  dadurch ermittelten Zimmer */
+  return &rooms[getInput("Wie lautet die Etagennummer?", 6) - 1][
+    getInput("Wie lautet die Zimmernummer?", 10) - 1
+  ];
+}
+
 void showRooms() {
   int i = 0;
   int j = 0;
@@ -67,15 +75,53 @@ void showRoom() {
   }
 }
 
-void checkIn() {}
+void checkInNext() {
+  for (int i = 0; i < 6; i++) {
+    for (int j = 0; j < 10; j++) {
+      if (!rooms[i][j]) {
+        rooms[i][j] = 1;
+        printf(
+          "\nDas nächste freie Zimmer wurde belegt. Es hat die Etagennummer %d "
+          "und die Zimmernummer %d.\n",
+          i + 1,
+          j + 1
+        );
+        return;
+      }
+    }
+  }
+}
+
+void checkInSpecific() {
+  bool* room = getRoom();
+  puts(
+    *room
+      ? "\nDas Zimmer ist voll!"
+      : "\nDas Zimmer wurde belegt."
+  );
+  *room = 1;
+}
+
+void checkIn() {
+  for (const auto& floorRooms: rooms) {
+    for (const bool room: floorRooms) {
+      if (!room) {
+        getInput(
+          "In welches Zimmer soll eingecheckt werden?\n1: Das nächste freie "
+          "Zimmer\n2: Ein bestimmtes Zimmer",
+          2
+        ) == 1
+          ? checkInNext()
+          : checkInSpecific();
+        return;
+      }
+    }
+  }
+  puts("\nAlle Zimmer sind voll!"); 
+}
 
 void checkOut() {
-  /* Abfragen der Etagen- und Zimmernummer und speichern eines Pointers zum
-  dadurch ermittelten Zimmer in room */
-  bool* room = &rooms[getInput("Wie lautet die Etagennummer?", 6) - 1][
-    getInput("Wie lautet die Zimmernummer?", 10) - 1
-  ];
-
+  bool* room = getRoom();
   puts(
     *room
       ? "\nDas Zimmer wurde als frei gespeichert."
