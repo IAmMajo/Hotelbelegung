@@ -26,10 +26,10 @@ int getInput(const string message, const int maximum) {
 
 void showRooms() {
   int i = 0;
-  int j = 0;
   /*Die Zimmer der einzelnen Etagen werden nach und nach abgelaufen.*/
   while (i<6) 
   {
+    int j = 0;
     cout<<i+1<<".Etage"<<endl;
     while (j<10) {
       if (rooms [i] [j] == 0)
@@ -48,14 +48,13 @@ void showRooms() {
 
 void showRoom() {  
   int room = getInput(
-    "Für welches Zimmer soll der Status überprüft werden?/nBitte beachten Sie, dass hier eine Zahl "
-    "zwischen 1 und 60 gefordert ist!/nBeispiel: Etage 4, Zimmer 5 = 45",
+    "Für welches Zimmer soll der Status überprüft werden?\n Bitte beachten Sie, dass hier eine Zahl "
+    "zwischen 1 und 60 gefordert ist!\n Beispiel: Etage 4, Zimmer 5 = 45",
     60
   );
   /*Die Zimmernummer muss um 1 verkürzt werden, da das Array bei 0 0 beginnt und nicht bei 0 1. */
-  room = room - 1;
-  int floor = room / 10;
-  int roomnumber = room % 10;
+  int floor = room / 10 -1;
+  int roomnumber = room % 10 -1;
   /*Alle Zimmer, die mit false belegt sind, sind freie Zimmer.*/
   if (rooms [floor] [roomnumber] == 0)
   {
