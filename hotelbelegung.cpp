@@ -56,17 +56,8 @@ void showRooms() {
 }
 
 void showRoom() {  
-  int room = getInput(
-    "Für welches Zimmer soll der Status überprüft werden?\n Bitte beachten Sie, dass hier eine Zahl "
-    "zwischen 1 und 60 gefordert ist!\n Beispiel: Etage 4, Zimmer 5 = 45",
-    60
-  );
-  /*Die eingegebene Zahl wird so korrigiert, dass mit einberechnet ist, dass ein Array bei den Werten 0 0 beginnt und nicht bei 1 1*/
-  int floor = room / 10 -1;
-  room = room -1;
-  int roomnumber = room % 10;
   /*Alle Zimmer, die mit false belegt sind, sind freie Zimmer.*/
-  if (rooms [floor] [roomnumber] == 0)
+  if (*getRoom() == 0)
   {
     cout<<"Das Zimmer ist noch nicht belegt!"<<endl;
   }
