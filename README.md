@@ -25,7 +25,7 @@ erhalten Sie folgendes Lastenheft:**
 
 * Strukturieren Sie zunächst das Problem, indem Sie die Teilfunktionen und deren
   Zusammenhang **grafisch darstellen**! (Prozedurbaum)
-* Zeichenen Sie für die Teilfunktionen ein **Struktogramm**! Legen sie eine
+* Zeichnen Sie für die Teilfunktionen ein **Struktogramm**! Legen sie eine
   Variablenliste an!
 * Dokumentieren Sie Ihren Quelltext angemessen!
 
