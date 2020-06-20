@@ -4,7 +4,7 @@ using namespace std;
 #include <iostream>
 #include <string>
 
-bool rooms[6][10];
+bool rooms[6][10] = {{1}};
 
 int getInput(const string message, const int maximum) {
   cout <<
@@ -69,7 +69,20 @@ void showRoom() {
 
 void checkIn() {}
 
-void checkOut() {}
+void checkOut() {
+  /* Abfragen der Etagen- und Zimmernummer und speichern eines Pointers zum
+  dadurch ermittelten Zimmer in room */
+  bool* room = &rooms[getInput("Wie lautet die Etagennummer?", 6) - 1][
+    getInput("Wie lautet die Zimmernummer?", 10) - 1
+  ];
+
+  puts(
+    *room
+      ? "\nDas Zimmer wurde als frei gespeichert."
+      : "\nDas eingegebene Zimmer ist bereits frei!"
+  );
+  *room = 0;
+}
 
 int main() {
   /* Ändern der von der Konsole benutzten Zeichenkodierung zu UTF-8, damit
