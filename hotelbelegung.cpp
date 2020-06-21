@@ -7,10 +7,7 @@ using namespace std;
 bool rooms[6][10];
 
 int getInput(const string message, const int maximum) {
-  cout <<
-    endl <<
-    message <<
-    endl;
+  cout << endl << message << endl;
   string input;
   getline(cin, input);
 
